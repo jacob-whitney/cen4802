@@ -1,13 +1,18 @@
 import java.util.Scanner;
 
 public class Main {
-    static int fib(int n) {
+    /**
+     * Returns the value in the Fibonacci Sequence of the n term parameter.
+     * @param   n   an integer representing a term within the Fibonacci Sequence.
+     * @return      n if less than or equal to 1, otherwise add F(n-1) + F(n-2).
+     */
+    static int fibo(int n) {
         if ( n <= 1 ) {
             return n;
         }
-        return fib(n - 1) + fib(n-2);
+        return fibo(n - 1) + fibo(n-2);
     }
-
+    
     public static void main(String[] args) {
         // Main Menu
         System.out.println("===========================================");
@@ -42,7 +47,7 @@ public class Main {
             }
 
             System.out.printf("Result: The " + n + " place in the sequence is ");
-            System.out.println(fib(n));
+            System.out.println(fibo(n));
             System.out.println();
             System.out.printf("Try another integer (q to quit)\n> ");
         }
