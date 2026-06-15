@@ -1,3 +1,5 @@
+package com.fib;
+
 import java.util.Scanner;
 
 public class Main {
