@@ -43,30 +43,30 @@ public class Fib {
      * Fibonacci Sequence.
      */
     public void startFibSequence() {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.printf(getMainMenu());
+            
+            while (true) {
+                String input = scanner.nextLine();
 
-        System.out.printf(getMainMenu());
-        
-        while (true) {
-            String input = scanner.nextLine();
+                // Quit
+                if (input.equals("q") || input.equals("Q")) {
+                    quit();
+                }
 
-            // Quit
-            if (input.equals("q") || input.equals("Q")) {
-                quit();
+                // Begin Fibonacci Sequence
+                try {
+                    n = Integer.parseInt(input);
+                } catch (NumberFormatException e) {
+                    System.out.println("[ERROR] Not a valid integer\n");
+                    System.out.println("Please try again");
+                    System.out.printf("> ");
+                    continue;
+                }
+
+                result = findFib(n);
+                System.out.printf(getFibResults());
             }
-
-            // Begin Fibonacci Sequence
-            try {
-                n = Integer.parseInt(input);
-            } catch (NumberFormatException e) {
-                System.out.println("[ERROR] Not a valid integer\n");
-                System.out.println("Please try again");
-                System.out.printf("> ");
-                continue;
-            }
-
-            result = findFib(n);
-            System.out.printf(getFibResults());
         }
     }
 
