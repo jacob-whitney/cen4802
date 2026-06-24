@@ -99,12 +99,29 @@ public class Fib {
      * @return      menu header and instructions in a string.
      */
     public String getMainMenu() {
-        return "===========================================\n" +
-               "              FIBONACCI METHOD\n" +
-               "===========================================\n" +
-               "Enter an integer to find its value within\n" +
-               "the Fibonacci sequence (q to quit)\n" +
-               "> ";
+        return  "===========================================\n" +
+                "              FIBONACCI METHOD\n" +
+                "===========================================\n" +
+                "+---+---+-------+\n" + 
+                "|   |   |       |\n" + 
+                "| 1 | 1 |   2   |\n" + 
+                "|   |   |       |\n" + 
+                "+---+---+-------+\n" + 
+                "|               |\n" + 
+                "|               |\n" + 
+                "|       3       |\n" + 
+                "|               |\n" + 
+                "+---------------+\n" + 
+                "|               |\n" + 
+                "|               |\n" + 
+                "|               |\n" + 
+                "|       5       |\n" + 
+                "|               |\n" + 
+                "|               |\n" + 
+                "+---------------+\n\n" +
+                "Enter an integer to find its value within\n" +
+                "the Fibonacci sequence (q to quit)\n" +
+                "> ";
     }
 
     /**

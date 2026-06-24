@@ -44,15 +44,13 @@ public class FibTests {
      */
     @Test
     public void testGetFibResults() {
-        
+        fib.setN(10);
+        fib.setResult();
         
         String expected = "Result: The " + fib.getN() + " place in the sequence is " + 
                           fib.getResult() + "\n" +
                           "Try another integer (q to quit)\n" +
                           "> ";
-                          
-        fib.setN(10);
-        fib.setResult();
         
         assertEquals(expected, fib.getFibResults());
     }
