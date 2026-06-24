@@ -30,12 +30,28 @@ public class FibTests {
     @Test
     public void testGetMainMenu() {
         String expected = "===========================================\n" +
-                          "              FIBONACCI METHOD\n" +
-                          "===========================================\n" +
-                          "Enter an integer to find its value within\n" +
-                          "the Fibonacci sequence (q to quit)\n" +
-                          "> ";
-        
+                "              FIBONACCI METHOD\n" +
+                "===========================================\n" +
+                "+---+---+-------+\n" + 
+                "|   |   |       |\n" + 
+                "| 1 | 1 |   2   |\n" + 
+                "|   |   |       |\n" + 
+                "+---+---+-------+\n" + 
+                "|               |\n" + 
+                "|               |\n" + 
+                "|       3       |\n" + 
+                "|               |\n" + 
+                "+---------------+\n" + 
+                "|               |\n" + 
+                "|               |\n" + 
+                "|               |\n" + 
+                "|       5       |\n" + 
+                "|               |\n" + 
+                "|               |\n" + 
+                "+---------------+\n\n" +
+                "Enter an integer to find its value within\n" +
+                "the Fibonacci sequence (q to quit)\n" +
+                "> ";
                           assertEquals(expected, fib.getMainMenu());
     }
 
