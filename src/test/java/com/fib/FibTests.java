@@ -44,7 +44,7 @@ public class FibTests {
      */
     @Test
     public void testGetFibResults() {
-        x
+        
         
         String expected = "Result: The " + fib.getN() + " place in the sequence is " + 
                           fib.getResult() + "\n" +
