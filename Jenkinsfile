@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven3'   // must match the name you give it in Manage Jenkins > Tools
+        maven 'mvn3.9.16'   // must match the name you give it in Manage Jenkins > Tools
         jdk 'JDK21'      // must match the name you give it in Manage Jenkins > Tools
     }
 
