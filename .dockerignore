@@ -1,0 +1,14 @@
+target/
+out/
+.git/
+.gitignore
+.idea/
+*.iml
+.mvn/
+mvnw
+mvnw.cmd
+Jenkinsfile
+Dockerfile
+.dockerignore
+LICENSE
+README.md
