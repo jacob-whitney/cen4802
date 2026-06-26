@@ -15,6 +15,6 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
 # Copy only the built jar from the build stage
-COPY --from=build /app/target/FibonacciSequence-1.4.0.jar app.jar
+COPY --from=build /app/target/FibonacciSequence-1.5.0.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
