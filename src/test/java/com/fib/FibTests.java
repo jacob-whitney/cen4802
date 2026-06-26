@@ -64,9 +64,7 @@ public class FibTests {
         fib.setResult();
         
         String expected = "Result: The " + fib.getN() + " place in the sequence is " + 
-                          fib.getResult() + "\n" +
-                          "Try another integer (q to quit)\n" +
-                          "> ";
+                          fib.getResult() + "\n";
         
         assertEquals(expected, fib.getFibResults());
     }

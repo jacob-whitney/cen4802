@@ -10,7 +10,11 @@ package com.fib;
 
 public class Main {   
     public static void main(String[] args) {
-        Fib fib = new Fib();
-        fib.startFibSequence();
+        if ( args == null || args.length == 0 ) {
+            Fib fib = new Fib();
+            fib.startFibSequence();
+        } else {
+            new Fib(args);
+        }
     }
 }

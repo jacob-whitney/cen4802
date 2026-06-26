@@ -12,19 +12,46 @@ import java.util.Scanner;
 
 public class Fib {
     // Attributes
-    private int n = 0;
-    private int result = findFib(n);
+    private Integer n = 0;
+    private Integer result = findFib(n);
+
+    // Constructor
+    Fib(String[] args) {
+        if ( validateArgs(args) ) {
+            String input = args[0];
+            this.n = validateInput(input);
+            if ( this.n == null ) {
+                System.out.println("[ERROR] Argument entered not a valid integer");
+                System.out.println("Please try again.");
+            }
+
+            // Begin Fibonacci Sequence
+            setResult();
+            System.out.printf(getFibResults());
+        } else {
+            System.out.println("[ERROR] Invalid argument(s)");
+            System.out.println();
+            System.out.println("Get an integer's value in the Fibonacci Sequence");
+            System.out.println("by passing it as a single argument when running");
+            System.out.println("the program.");
+            System.out.println();
+            System.out.println("Or run the program without any arguments to run");
+            System.out.println("it interactively.");
+        }
+    }
+
+    Fib() {}
 
     // Getters and Setters
-    public int getN() {
+    public Integer getN() {
         return n;
     }
 
-    public void setN(int n) {
+    public void setN(Integer n) {
         this.n = n;
     }
 
-    public int getResult() {
+    public Integer getResult() {
         return result;
     }
 
@@ -32,7 +59,7 @@ public class Fib {
         this.result = findFib(n);
     }
 
-    public void setResult(int result) {
+    public void setResult(Integer result) {
             this.result = result;
     }
 
@@ -54,19 +81,20 @@ public class Fib {
                     quit();
                 }
 
-                // Begin Fibonacci Sequence
-                try {
-                    n = Integer.parseInt(input);
-                } catch (NumberFormatException e) {
-                    System.out.println("[ERROR] Not a valid integer\n");
+                // Validate user input
+                this.n = validateInput(input);
+                if ( this.n == null ) {
+                    System.out.println("[ERROR] Not a valid integer");
                     System.out.println("Please try again");
                     System.out.printf("> ");
                     continue;
                 }
 
-                result = findFib(n);
+                // Begin Fibonacci Sequence
+                setResult();
                 System.out.printf(getFibResults());
-            }
+                System.out.printf("Try another integer (q to quit)\n> ");
+            }   
         }
     }
 
@@ -84,11 +112,44 @@ public class Fib {
      * @param   n   an integer representing a term within the Fibonacci Sequence.
      * @return      n if less than or equal to 1, otherwise add F(n-1) + F(n-2).
      */
-    public int findFib(int n) {
+    public Integer findFib(Integer n) {
         if ( n <= 1 ) {
             return n;
         }
         return findFib(n - 1) + findFib(n-2);
+    }
+
+
+    public boolean validateArgs(String[] args) {
+        if ( args.length > 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    /**
+     * 
+     * @param input User input to find integer value in fib sequence
+     * @return      
+     */
+    public Integer validateInput(String input) {
+        try {
+            Integer parse = Integer.parseInt(input);
+            n = validateN(parse);
+            return n;
+        } catch (NumberFormatException e) {
+            System.out.println(e);
+            return null;
+        }
+    }
+
+    public Integer validateN(Integer n) {
+        if ( n >= 0 ) {
+            return n;
+        } else {
+            return null;
+        }
     }
     
     // Printer methods
@@ -131,9 +192,7 @@ public class Fib {
      */
     public String getFibResults() {
         return "Result: The " + n + " place in the sequence is " + 
-               result + "\n" +
-               "Try another integer (q to quit)\n" +
-               "> ";
+               result + "\n";
     }
 
 
